@@ -1,4 +1,4 @@
-# Ponago
+# Pongo
 ## About
 Ponago is a yomichan/yomitan dictionary generator for Toki Pona!
 
