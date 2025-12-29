@@ -15,11 +15,12 @@ async function tokiponaorg() {
 
     // Parser
     let terms = []
-    const lines = raw.split('\r\n');
+    const lines = raw.split(/\r?\n/);
 
     for (line of lines) {                       // Each line contains a full entry
         if (line.charAt(0) === '#' ||           // Filter out comments
             line.charAt(0) === '') {            // Filter out empty lines
+            console.log("Skipping: " + line);
             continue;
         }
 
@@ -38,9 +39,10 @@ async function tokiponaorg() {
             .setReading(term)
             .addDetailedDefinitions( defs.map(t => t[0]) )
             .build());
-    }
 
-    console.log(terms);
+        // Logging
+        console.log("Adding: " + term);
+    }
 
     return terms;
 }
@@ -56,7 +58,7 @@ async function tokiponaorg() {
     // Create index information
     const index = new DictionaryIndex()
         .setTitle("Pongo")
-        .setRevision("1.0")
+        .setRevision("1.1")
         .setAuthor("jan Nina (󱤾󱤌󱤿󱤃)")
         .setDescription("A dictionary for toki pona. Includes words, phrases, compounds, and sitelen pona!")
         .setAttribution("http://tokipona.org/compounds.txt\nhttp://tokipona.org/nimi_pu.txt\nhttp://tokipona.org/nimi_pi_pu_ala.txt")
