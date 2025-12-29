@@ -12,8 +12,9 @@ This allows you to use the popup dictionary yomitan for toki pona.
 Alternatively you can build the code yourself.
 
 1. Clone the repo
-2. `node ./index.js`
-3. Import `./build/pongo.zip` into yomitan
+2. `npm install`
+3. `node ./index.js`
+4. Import `./build/pongo.zip` into yomitan
 
 
 ## Sources
